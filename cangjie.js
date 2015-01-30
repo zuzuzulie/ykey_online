@@ -151,7 +151,7 @@ function key_down(evn) {
 		}
 		return false;
 	}
-	if (input_mode || evn.shiftKey ||  evn.altKey) {
+	if (input_mode || evn.shiftKey && input_letter == "" ||  evn.altKey) {
 		return true;
 	}
 	//letters
