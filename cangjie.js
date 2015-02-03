@@ -22,7 +22,7 @@ var idiom_count = 0;
 var page_point = 0;
 
 //saveral mode switch
-var input_mode = false; //chinese or english
+var input_mode = true; //chinese or english
 var space_mode = false; //space manner when no cc matched
 var punc_mode = false; //,.to two width
 var font_mode = false; //TW-Sung or HanaMin
@@ -41,7 +41,10 @@ var key_up_count = 0;
 
 //read cin file and set focus
 function body_onload() {
+	r_cookie();
+	input_area.focus();
 	read_cin();
+	vision_inform("請稍候...", "正在導入倉頡碼表", 0);
 }
 
 function key_down(evn) {
@@ -236,7 +239,8 @@ function key_down(evn) {
 
 function key_up(evn) {
 	key_up_count += evn.keyCode;
-	if (key_down_count == 16 && key_up_count == 16) {
+	//key Shift to switch input cc or e
+	if (key_down_count == 16 && key_up_count == 16 && yahooCJ_c.length > 0) {
 		change_input_mode();
 	}
 	if(key_down_count <= key_up_count) {
@@ -437,6 +441,21 @@ function cin_idiom() {
 	return;
 }
 
+function w_cookie () {
+	var d = new Date();
+    d.setTime(d.getTime() + (90*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "input_area_value=" + encodeURIComponent(input_area.value) + ";" + expires;
+	return;
+}
+
+function r_cookie () {
+    var en_cookie = document.cookie.split(';')[0];
+	en_cookie = en_cookie.substring(17, en_cookie.length);
+	input_area.value = decodeURIComponent(en_cookie);
+	return;
+}
+
 function vision_inform(cc_carriage, select_carriage, timeout) {
 	cc_code.value = cc_carriage;
 	select_idiom.value = select_carriage;
@@ -509,9 +528,9 @@ function read_cin() {
 					yahooCJ_c[cin_n_point] = cin_n[cin_n_point].split("\t")[1];
 					cin_n_point += 1;
 				}
-				input_area.readOnly = false;
-				input_area.value = "";
-				input_area.focus();
+				input_mode_button.disabled = false;
+				change_input_mode();
+				vision_inform("開始使用", "", 1000);
 			}
 		}
 		cin_file.open("GET","./yahooCJ.cin",true);
@@ -545,5 +564,6 @@ function insert_cc(myValue) {
 		input_area.value += myValue;
 		input_area.focus();
 	}
+	w_cookie();//write the textarea'value when cc input
 	return;
 }
