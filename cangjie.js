@@ -39,12 +39,17 @@ var vision_timeout;
 var key_down_count = 0;
 var key_up_count = 0;
 
+//to set the date delete the cookie
+var date_cookie = new Date();
+date_cookie.setTime(date_cookie.getTime() + (90 * 24 * 60 * 60 * 1000));
+var expires = "expires=" + date_cookie.toUTCString();
+
 //read cin file and set focus
 function body_onload() {
+	vision_inform("請稍候...", "正在導入倉頡碼表", 0);
 	r_cookie();
 	input_area.focus();
 	read_cin();
-	vision_inform("請稍候...", "正在導入倉頡碼表", 0);
 }
 
 function key_down(evn) {
@@ -442,9 +447,6 @@ function cin_idiom() {
 }
 
 function w_cookie () {
-	var d = new Date();
-    d.setTime(d.getTime() + (90*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
     document.cookie = "input_area_value=" + encodeURIComponent(input_area.value) + ";" + expires;
 	return;
 }
