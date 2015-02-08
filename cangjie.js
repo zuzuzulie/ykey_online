@@ -59,7 +59,7 @@ function key_down(evn) {
 	}
 	if (evn.ctrlKey) {
 		//{'}switch space mode
-		if (222 == evn.keyCode) {
+		if (222 == evn.keyCode && yahooCJ_e.length > 0) {
 			if (space_mode) {
 				space_mode = false;
 				vision_inform("空格模式", "空碼無效", 1000);
@@ -70,7 +70,7 @@ function key_down(evn) {
 			}
 		}
 		//{,}switch punctuation mode
-		else if (188 == evn.keyCode) {
+		else if (188 == evn.keyCode && yahooCJ_e.length > 0) {
 			if (punc_mode) {
 				punc_mode = false;
 				vision_inform("切換標點", "英文標點", 1000);
@@ -81,7 +81,7 @@ function key_down(evn) {
 			}
 		}
 		//{.}switch font
-		else if (190 == evn.keyCode) {
+		else if (190 == evn.keyCode && yahooCJ_e.length > 0) {
 			if (font_mode) {
 				font_mode = false;
 				change_font("font_TWSung");
@@ -94,12 +94,12 @@ function key_down(evn) {
 			}
 		}
 		//{Ctrl}+{12345}ajust input_area's width and height
-		else if (53 == evn.keyCode) {
+		else if (53 == evn.keyCode && yahooCJ_e.length > 0) {
 			input_area.style.width = "400px";
 			input_area.style.height = "200px";
 			vision_inform("原始大小", input_area.style.width + "," + input_area.style.height, 1000);
 		}
-		else if (49 == evn.keyCode || 51 == evn.keyCode) {
+		else if ((49 == evn.keyCode || 51 == evn.keyCode) && yahooCJ_e.length > 0) {
 			if (parseInt(input_area.style.width) + 40 * (50 - evn.keyCode) < 400) {
 				input_area.style.width = "400px";
 				vision_inform("最小寬度", input_area.style.width + "," + input_area.style.height, 1000);
@@ -109,7 +109,7 @@ function key_down(evn) {
 				vision_inform("寬度" + (50 - evn.keyCode > 0 ? "+" : "-") + "40px", input_area.style.width + "," + input_area.style.height, 1000);
 			}
 		}
-		else if (50 == evn.keyCode || 52 == evn.keyCode) {
+		else if ((50 == evn.keyCode || 52 == evn.keyCode) && yahooCJ_e.length > 0) {
 			if (parseInt(input_area.style.height) + 40 * (51 - evn.keyCode) < 200) {
 				input_area.style.height = "200px";
 				vision_inform("最小高度", input_area.style.width + "," + input_area.style.height, 1000);
@@ -120,26 +120,26 @@ function key_down(evn) {
 			}
 		}
 		//{Ctrl}+{6789} ajust input_area's location
-		else if (54 == evn.keyCode) {
+		else if (54 == evn.keyCode && yahooCJ_e.length > 0) {
 			whole_board.style.marginTop = "0px";
 			vision_inform("位置調整", "上移頂端", 1000);
 		}
-		else if (55 == evn.keyCode) {
+		else if (55 == evn.keyCode && yahooCJ_e.length > 0) {
 			center_board.style.left = "0%";
 			whole_board.style.right = "0%";
 			vision_inform("位置調整", "移至左端", 1000);
 		}
-		else if (56 == evn.keyCode) {
+		else if (56 == evn.keyCode && yahooCJ_e.length > 0) {
 			whole_board.style.marginTop = "40px";
 			vision_inform("位置調整", "下移原位", 1000);
 		}
-		else if (57 == evn.keyCode) {
+		else if (57 == evn.keyCode && yahooCJ_e.length > 0) {
 			center_board.style.left = "50%";
 			whole_board.style.right = "50%";
 			vision_inform("位置調整", "保持居中", 1000);
 		}
 		//search e frome cc
-		else if (!input_area.readOnly && (59 == evn.keyCode || 186 == evn.keyCode)) {
+		else if (!input_area.readOnly && (59 == evn.keyCode || 186 == evn.keyCode) && yahooCJ_e.length > 0) {
 			search_mode = true;
 			input_letter = "";
 			idiom_count = 0;
@@ -309,7 +309,8 @@ function search_input(evn) {
 		}
 		return false;
 	}
-	else if (evn.keyCode == 13 && cc_code.value.length > 0) {
+	//enter to execute searching cc from e(for IE)
+	else if (evn.keyCode == 13) {
 		cc_e();
 	}
 	return true;
@@ -328,11 +329,11 @@ function change_font(the_font) {
 function change_input_mode() {
 	if (input_mode) {
 		input_mode = false;
-		input_mode_button.value = "倉頡";
+		input_mode_button.innerHTML = "倉頡";
 	}
 	else {
 		input_mode = true;
-		input_mode_button.value = "EN";
+		input_mode_button.innerHTML = "EN";
 	}
 	key_down_count = 0;
 	key_up_count = 0;
@@ -341,7 +342,7 @@ function change_input_mode() {
 	page_point = 0;
 	vision_select();
 	input_area.focus();
-	vision_inform("切換中/英", input_mode_button.value, 1000);
+	vision_inform("切換中/英", input_mode_button.innerHTML, 1000);
 	return;
 }
 

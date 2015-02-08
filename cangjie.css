@@ -67,16 +67,22 @@ input {
 	color:black;
 	background-color:white;
 }
+button {
+}
 #input_mode_button {
 	margin-left:2px;
+	padding:0px;
 	font-size:18px;
 	font-weight:bold;
+	height:30px;
 	width:50px;
 	color:black;
 }
 #help {
+	padding:0px;
 	font-size:18px;
 	font-weight:bold;
+	height:30px;
 	width:50px;
 	color:black;
 	float:right;
