@@ -39,23 +39,19 @@ var vision_timeout;
 var key_down_count = 0;
 var key_up_count = 0;
 
-//to set the date delete the cookie
-var date_cookie = new Date();
-date_cookie.setTime(date_cookie.getTime() + (90 * 24 * 60 * 60 * 1000));
-var expires = "expires=" + date_cookie.toUTCString();
-
 //read cin file and set focus
 function body_onload() {
 	vision_inform("請稍候...", "正在導入倉頡碼表", 0);
-	r_cookie();
 	input_area.focus();
 	read_cin();
 }
 
 function key_down(evn) {
 	key_down_count += evn.keyCode;
+	//Let shift available everytime when it is inputed
 	if (16 == evn.keyCode) {
 		key_down_count = evn.keyCode;
+		key_up_count = 0;
 	}
 	if (evn.ctrlKey) {
 		//{'}switch space mode
@@ -70,7 +66,7 @@ function key_down(evn) {
 			}
 		}
 		//{,}switch punctuation mode
-		else if (188 == evn.keyCode && yahooCJ_e.length > 0) {
+		else if (190 == evn.keyCode && yahooCJ_e.length > 0) {
 			if (punc_mode) {
 				punc_mode = false;
 				vision_inform("切換標點", "英文標點", 1000);
@@ -81,7 +77,7 @@ function key_down(evn) {
 			}
 		}
 		//{.}switch font
-		else if (190 == evn.keyCode && yahooCJ_e.length > 0) {
+		else if (188 == evn.keyCode && yahooCJ_e.length > 0) {
 			if (font_mode) {
 				font_mode = false;
 				change_font("font_TWSung");
@@ -447,18 +443,6 @@ function cin_idiom() {
 	return;
 }
 
-function w_cookie () {
-    document.cookie = "input_area_value=" + encodeURIComponent(input_area.value) + ";" + expires;
-	return;
-}
-
-function r_cookie () {
-    var en_cookie = document.cookie.split(';')[0];
-	en_cookie = en_cookie.substring(17, en_cookie.length);
-	input_area.value = decodeURIComponent(en_cookie);
-	return;
-}
-
 function vision_inform(cc_carriage, select_carriage, timeout) {
 	cc_code.value = cc_carriage;
 	select_idiom.value = select_carriage;
@@ -567,6 +551,5 @@ function insert_cc(myValue) {
 		input_area.value += myValue;
 		input_area.focus();
 	}
-	w_cookie();//write the textarea'value when cc input
 	return;
 }
