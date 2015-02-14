@@ -6,9 +6,9 @@ README
 
 
 ---
-* 希望有主機的朋友幫我上傳這個小作品到你的網站，這樣人們就可以在更多地方使用倉頡輸入法。上傳之前請先把cangjie.js裡的509行的注釋去掉，再注釋510行。結果如下:<br>`if (cin_file.readyState == 4 && cin_file.status == 200)`<br>`//if (cin_file.readyState == 4)`
+* 希望有主機的朋友幫我上傳這個小作品到你的網站，傳遞公益，舉手之勞。上傳之前請先把cangjie.js裡的509行的注釋去掉，再注釋510行。結果如下:<br>`if (cin_file.readyState == 4 && cin_file.status == 200)`<br>`//if (cin_file.readyState == 4)`
 
-* 上傳的時候若衹希望上傳輸入法本體(cangjie.html，cangjie.css，cangjie.js，yahooCJ.cin這四個文檔)，請把cangjie.html第21行的<br>`cangjie_help.html`<br>改爲<br>`http://ejsoon.ciki.me/cangjie/cangjie_help.html`
+* 爲減少佔用空間可衹上傳輸入法本體(cangjie.html，cangjie.css，cangjie.js，yahooCJ.cin這四個文檔)，若要如此請先把cangjie.html第21行的<br>`cangjie_help.html`<br>改爲<br>`http://ejsoon.ciki.me/cangjie/cangjie_help.html`
 
 * 下載zip文檔解壓後即可以單機使用。(**衹能用在Firefox**，目前我不知道爲何其他瀏覽器不能通過ajax讀到同目錄下的cin檔，請其他熟悉js網頁編程的朋友幫助看下代碼，若找到問題所在請告知。互相學習，一起進步)
 
