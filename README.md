@@ -1,6 +1,5 @@
 README
 =========
-![](https://github.com/ejsoonyang/yahookeykey_online/raw/master/pictures/cangjie_screenshot.png)
 本網頁程式以"保留作者名字|非商業使用|請勿更改"的方式進行分享，作者名字爲"尹杉|Ejsoon Yang"。  
 
 任何問題請發送郵件至e201302012123@gmail.com。  
