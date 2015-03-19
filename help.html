@@ -3,7 +3,7 @@
 	<head>
 		<title>雅虎奇摩在綫_help</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-		<link rel="stylesheet" type="text/css" href="./cangjie_help.css"/>
+		<link rel="stylesheet" type="text/css" href="./help.css"/>
 	</head>
 	<body onload="body_onload()">
 		<div id="whole">
@@ -77,7 +77,7 @@
 					<br />
 					<p class="keyhelp_title">==模式轉換==</p>
 					<ul>
-						<li>切換的字體爲{TW-Sung/HanaMin}，若本機無此字型檔，請移步至本網下載區。</li>
+						<li>切換的字體爲{TW-Sung/HanaMin}，若本機無此字型檔，請移步至本網<a href="#switch_topical4" onclick="button_topical(this.hash)">下載區</a>。</li>
 						<li>中文標點衹限於{，。}這兩個，若仍有常使用到全形標點的需求，可以參考<a href="http://www.scj2000.com/tutorials.html#%E5%80%89%E9%A0%A1%E8%BC%B8%E5%85%A5%E6%B3%95%E7%9A%84%E5%8F%96%E7%A2%BC%E6%96%B9%E6%B3%95%EF%BC%9A" target="_blank">快倉2000:倉頡輸入法教學</a>:{D. 倉頡輸入法的標點和特殊符號取碼}。</li>
 						<li>目前字體顯示的測試結果:Firefox/Chrome/Opera顯示正常，IE/Safari/Opera(for Linux)似乎不能向後檢索字體。</li>
 						<li>查詢倉頡編碼之時，Firefox/Chrome/Opera/Safari可以自動顯示框內新增字符的編碼，<span class="bold_red">但IE8及之前版本要再按一下{Enter}</span>。</li>
@@ -102,6 +102,7 @@
 					<br />
 					<p class="keyhelp_title">==更新歷史==</p>
 					<ul>
+						<li>2015-3-19:增加倉頡之劫下載，改寫部分幫助手冊內容，改網頁文檔名爲index，下載更換爲github_Raw</li>
 						<li>2015-2-9:使得單按Shift切換中英文在任何情況均有效,去掉cookie保存文本功能</li>
 						<li>2015-2-4:更改button樣式,使其文字在所有瀏覽器居中</li>
 						<li>2015-2-3:增加cookie實時保存功能，重寫部分幫助手冊內容</li>
@@ -115,7 +116,7 @@
 				<div id="topical2">
 					<p>雅虎奇摩倉頡在三代的基礎上，結合五代做了大量的碼表修訂工作，使其取碼更爲科學，合乎現今的字型標準。惟有領略了雅虎奇摩在倉頡編碼上的作爲，才能更深一層地理解:輸入法本身係爲了人們更準確方便地輸入漢字，它可以也必須更加地聰明和靈活。</p>
 					<span class="bold_red">&#60;section1/4 倉頡之劫的活路&#62;</span><br />
-					以下內容摘自&#60;&#60;倉頡之劫&#62;&#62;:<br />
+					以下內容摘自&#60;&#60;倉頡之劫<a href="https://github.com/ejsoonyang/books_store/raw/master/my_topical/%E5%80%89%E9%A0%A1%E4%B9%8B%E5%8A%AB(2014-9-22).pdf" target="_blank">&#8595;</a>&#62;&#62;:<br />
 					「在這些倉頡輸入法中,我找到了一個我認爲至今最完善的倉頡:雅虎奇摩輸入法.奇摩倉頡根據現代正體字形重製了編碼,例如:<br />
 					<div class="vs_whole">
 						<div class="vs_cell">
@@ -238,7 +239,7 @@
 					<br />
 					<br />
 					<span class="whyOnline_title">因爲喜歡編程，喜歡做輸入法</span><br />
-					使用了這麼多輸入法軟體，無有一個合自己心意的，包括雅虎奇摩輸入法本體。比如它的{Enter}功能與{Space}一樣，比如它的標點也參與了編碼。<br />
+					使用了這麼多輸入法軟體，無有一個合自己心意的，包括雅虎奇摩輸入法本體。比如它的{Enter}功能與{Space}一樣，候選框光標跟隨亂跳，字型顯示不全，無法禁止五碼全碼頂字上屏等。<br />
 					既然自己會一點編程，何不自己做一個?做一個比雅虎奇摩原版更好用的輸入法!<br />
 					<br />
 					<br />
@@ -257,7 +258,7 @@
 							<a href="http://fonts.jp/hanazono/" target="_blank">官方下載</a>
 						</div>
 						<div class="ttf_left2">
-							<a href="http://pan.baidu.com/s/1o6l0Y98" target="_blank">pan_baidu</a>
+							<a href="https://github.com/ejsoonyang/font_cangjie/tree/master/fonts" target="_blank">github_Raw</a>
 						</div>
 						<div class="ttf_left2">
 							<a href="https://drive.google.com/folderview?id=0B8K-YwbJ85NsM2Q4c2Z2Z1JJQjg&usp=sharing" target="_blank">drive_google</a>
@@ -372,7 +373,7 @@
 						</div>
 						<div class="mydrive_right">
 							<a href="https://drive.google.com/folderview?id=0B8K-YwbJ85NsYXhQVUNldDVsUTQ&usp=sharing" target="_blank">drive_google</a><br />
-							<a href="http://pan.baidu.com/s/1sjNo8LB" target="_blank">pan_baidu</a>
+							<a href="https://github.com/ejsoonyang/font_cangjie/tree/master/cangjie_software" target="_blank">github_Raw</a>
 						</div>
 						<div style="width:100%;height:1px;margin-top:-1px;clear:both;"></div>
 					</div>
@@ -396,7 +397,7 @@
 					<ul>
 						<li><a href="http://ecj.hk/" target="_blank">易頡輸入法</a></li>
 						<li><a href="http://www.scj2000.com/" target="_blank">快倉2000中文輸入法</a></li>
-						<li><a href="http://ejsoon.ciki.me/cangjie/cangjie.html" target="_blank">尹杉網站．雅虎奇摩倉頡在綫輸入法</a></li>
+						<li><a href="http://ejsoon.ciki.me/cangjie/index.html" target="_blank">尹杉網站．雅虎奇摩倉頡在綫輸入法</a></li>
 					</ul>
 				</div>
 				<div id="bottom">
@@ -413,7 +414,7 @@
 			<div style="width:100%;height:1px;margin-top:-1px;"></div>
 		</div>
 	<footer>
-		<script src="./cangjie_help.js"></script>
+		<script src="./help.js"></script>
 	</footer>
 	</body>
 </html>
