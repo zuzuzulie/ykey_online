@@ -1,5 +1,6 @@
-var center_boarde = document.getElementById("center_boarde");
-var whole_boarde = document.getElementById("whole_boarde");
+//var center_boarde = document.getElementById("center_boarde");
+var the_body = document.getElementById("the_body");
+var whole_board = document.getElementById("whole_board");
 var welcome = document.getElementById("welcome");
 var input_area = document.getElementById("input_area");
 var cc_code = document.getElementById("cc_code");
@@ -121,8 +122,7 @@ function key_down(evn) {
 			vision_inform("位置調整", "上移頂端", 1000);
 		}
 		else if (55 == evn.keyCode && yahooCJ_e.length > 0) {
-			center_board.style.left = "0%";
-			whole_board.style.right = "0%";
+			the_body.style.textAlign = "left";
 			vision_inform("位置調整", "移至左端", 1000);
 		}
 		else if (56 == evn.keyCode && yahooCJ_e.length > 0) {
@@ -130,8 +130,7 @@ function key_down(evn) {
 			vision_inform("位置調整", "下移原位", 1000);
 		}
 		else if (57 == evn.keyCode && yahooCJ_e.length > 0) {
-			center_board.style.left = "50%";
-			whole_board.style.right = "50%";
+			the_body.style.textAlign = "center";
 			vision_inform("位置調整", "保持居中", 1000);
 		}
 		//search e frome cc

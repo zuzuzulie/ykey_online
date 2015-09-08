@@ -8,22 +8,15 @@ body {
 	width:100%;
 	margin:0px;
 	background-color:#acf;
-	overflow:hidden;
+	text-align:center;
 }
 div {
 	position:relative;
 	margin:10px auto;
 }
-#center_board {
-	float:left;
-	left:50%;
-	margin:0px;
-}
 #whole_board {
-	float:left;
-	right:50%;
-	margin-top:40px;
-	margin-bottom:40px;
+	margin:40px auto;
+	display:inline-block;
 	padding: 0px 20px 20px 20px;
 	text-align:center;
 	background-color:#5c017a;
