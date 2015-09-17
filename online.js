@@ -240,7 +240,7 @@ function key_down(evn) {
 function key_up(evn) {
 	key_up_count += evn.keyCode;
 	//key Shift to switch input cc or e
-	if (key_down_count == 16 && key_up_count == 16 && yahooCJ_c.length > 0) {
+	if (key_down_count == 16 && key_up_count == 16 && yahooCJ_c.length > 0 && !space_mode) {
 		change_input_mode();
 	}
 	if(key_down_count <= key_up_count) {
