@@ -518,7 +518,7 @@ function read_cin() {
 				vision_inform("開始使用", "", 1000);
 			}
 		}
-		cin_file.open("GET","./yahooCJ.cin",true);
+		cin_file.open("GET","yahooCJ.cin",true);
 		cin_file.send();
 	}
 	return;
