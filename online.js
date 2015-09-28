@@ -504,8 +504,8 @@ function read_cin() {
 	if (window.XMLHttpRequest) {
 		cin_file = new XMLHttpRequest();
 		cin_file.onreadystatechange = function() {
-			if (cin_file.readyState == 4 && cin_file.status == 200)
-			//if (cin_file.readyState == 4)
+			//if (cin_file.readyState == 4 && cin_file.status == 200)
+			if (cin_file.readyState == 4)
 			{
 				cin_n = cin_file.responseText.split("\n");
 				while (cin_n.length - 1 > cin_n_point) {
