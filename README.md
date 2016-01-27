@@ -1,13 +1,15 @@
 README
 =========
-本網頁程式以"保留作者名字|非商業使用|請勿更改"的方式進行分享，作者名字爲"尹卂|Ejsoon Y"。  
+本網頁程式以「保留作者名字|非商業使用|請勿更改」的方式進行分享，作者名字爲「尹卂|Ejsoon Y」。  
 
 任何問題請發送郵件至ejsoon@outlook.com。  
 
 ---
 * 下載zip文檔解壓後即可以單機使用。(**僅Firefox測試通過**，其他瀏覽器由於不能通過ajax讀到同目錄下的cin檔所以無法使用。)
 
-* http://ejsoon.github.io/online/online.html 
+* 如果要上傳到你的網站，請先把online.js的第652行刪掉，再把651行的注釋去掉。
+
+* [演示位址](http://ejsoon.github.io/online/online.html)
 
 ---
 還有:
